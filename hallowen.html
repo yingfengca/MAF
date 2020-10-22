@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hallowen</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: black;
+            background-image: url(bg.jpg);
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button{
+            height: 80px;
+            width: 250px;
+            background-color: crimson;
+            border: 1px solid crimson;
+            color: white;
+            font-size: 20px;
+            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+            outline: none;
+            animation: shaking 0.5s infinite alternate;
+        }
+        button:hover{
+            background-color: rgb(255, 0, 51);
+            border: 1px solid rgb(255, 0, 51);
+            cursor: pointer;
+            animation: shaking 0.1s infinite alternate;
+        }
+
+        @keyframes shaking {
+            from{
+                transform: translateX(-30%);
+            }
+            to{
+                transform: translateX(30%);
+            }
+        }
+
+
+
+        img{
+            display: none;
+            animation: zoomIn 0.5s forwards;
+        }
+
+        @keyframes zoomIn {
+            from{
+                transform: scale(0.1);
+            }
+            to{
+                transform: scale(4.5);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="scare()">DO NOT CLICK ! ! !</button>
+    <img id="laugh_pic" src="laugh.gif" alt="">
+    <audio id="laugh" src="laugh.mp3"></audio>
+    <script>
+        function scare(){
+            laugh.play();
+            btn.style.display="none"
+            laugh_pic.style.display="block";
+        }
+    </script>
+</body>
+</html>
